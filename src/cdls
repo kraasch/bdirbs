@@ -7,8 +7,8 @@
 function main() {
 	(
 		if $(test -f ~/.bashdirbs); then
-			cat ~/.bashdirbs | grep -v '\*'
-			cat ~/.bashdirbs | grep '\*' | while read x; do
+			cat ~/.bashdirbs | sed "s|^~|$HOME|" | grep -v '\*'
+			cat ~/.bashdirbs | sed "s|^~|$HOME|" | grep '\*' | while read x; do
 				pyexpand "$x"
 			done
 		fi

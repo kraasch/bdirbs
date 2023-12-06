@@ -4,9 +4,12 @@
 #> type: interactive (bash).
 #> comment: edit all directory bookmarks.
 
+PERM=~/.config/bashdirbs/permanent
+CUST=~/.config/bashdirbs/custom
+
 function main() {
-	if $(test -f ~/.bashdirbs); then
-		vim ~/.bashdirbs
+	if $(test -f "$CUST"); then
+		vim "$CUST"
 	fi
 	echo permanent bookmarks:
 	bdirbs_permanent

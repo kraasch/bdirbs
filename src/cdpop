@@ -4,7 +4,10 @@
 #> type: interactive (bash).
 #> comment: remove the last directory bookmark.
 
+PERM=~/.config/bashdirbs/permanent
+CUST=~/.config/bashdirbs/custom
+
 function main() {
-	sed -i '$ d' ~/.bashdirbs
+	sed -i '$ d' "$CUST"
 }
 main

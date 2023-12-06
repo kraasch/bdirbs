@@ -1,12 +1,15 @@
 #!/bin/bash
 
-function bdirbs_permanent() {
+PERM=~/.config/bashdirbs/permanent
+CUST=~/.config/bashdirbs/custom
+
+function main() {
 	if $(test -z "$BDIRBS_HIDE_PERM"); then
-		cat ~/.bashdirbs_permanent | sed "s|^~|$HOME|" | grep -v '\*'
-		cat ~/.bashdirbs_permanent | sed "s|^~|$HOME|" | grep '\*' | while read x; do
+		cat "$PERM" | sed "s|^~|$HOME|" | grep -v '\*'
+		cat "$PERM" | sed "s|^~|$HOME|" | grep '\*' | while read x; do
 			pyexpand "$x"
 		done
 	fi
 }
 
-bdirbs_permanent
+main

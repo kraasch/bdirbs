@@ -4,6 +4,9 @@
 #> type: interactive (bash).
 #> comment: add the current directory as directory bookmark.
 
+PERM=~/.config/bashdirbs/permanent
+CUST=~/.config/bashdirbs/custom
+
 function main() {
 
 	# check for command line argument.
@@ -21,7 +24,7 @@ function main() {
 	fi
 
 	# add to temp bookmarks.
-	echo "$new" >>~/.bashdirbs
+	echo "$new" >>"$CUST"
 }
 
 main "$@"

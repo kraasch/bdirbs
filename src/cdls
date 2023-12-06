@@ -4,11 +4,14 @@
 #> type: interactive (bash).
 #> comment: print the list of all directory bookmarks (not including permanent bookmarks).
 
+PERM=~/.config/bashdirbs/permanent
+CUST=~/.config/bashdirbs/custom
+
 function main() {
 	(
 		if $(test -f ~/.bashdirbs); then
-			cat ~/.bashdirbs | sed "s|^~|$HOME|" | grep -v '\*'
-			cat ~/.bashdirbs | sed "s|^~|$HOME|" | grep '\*' | while read x; do
+			cat "$CUST" | sed "s|^~|$HOME|" | grep -v '\*'
+			cat "$CUST" | sed "s|^~|$HOME|" | grep '\*' | while read x; do
 				pyexpand "$x"
 			done
 		fi

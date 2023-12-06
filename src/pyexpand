@@ -12,6 +12,9 @@
 #    p = Path(path_pattern)
 #    return Path(p.parent).expanduser().glob(p.name)
 
+#PERM='~/.config/bashdirbs/permanent'
+#CUST='~/.config/bashdirbs/custom'
+
 import sys
 from glob import glob
 from pathlib import Path

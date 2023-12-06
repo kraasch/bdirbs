@@ -1,8 +1,11 @@
 #!/bin/bash
 
+PERM=~/.config/bashdirbs/permanent
+CUST=~/.config/bashdirbs/custom
+
 (
 	bdirbs_permanent
-	cat ~/.bashdirbs
+	cat "$CUST"
 ) | sort -n |
 	uniq -c |                  # count occurences.
 	grep -vE '^[ ]* 1 ' |      # get the lines that are not unique.

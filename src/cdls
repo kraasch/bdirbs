@@ -9,13 +9,8 @@ CUST=~/.config/bashdirbs/custom
 
 function main() {
 	(
-		if $(test -f ~/.bashdirbs); then
-			cat "$CUST" | sed "s|^~|$HOME|" | grep -v '\*'
-			cat "$CUST" | sed "s|^~|$HOME|" | grep '\*' | while read x; do
-				pyexpand "$x"
-			done
-		fi
-		bdirbs_permanent
+		bdirbs_expand "$CUST"
+		bdirbs_expand "$PERM"
 	) | sort | uniq
 }
 

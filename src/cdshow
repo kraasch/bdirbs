@@ -8,12 +8,10 @@ PERM=~/.config/bashdirbs/permanent
 CUST=~/.config/bashdirbs/custom
 
 function main() {
-	echo "PERM BOOKMARKS"
-	bdirbs_permanent
-	echo "TEMP BOOKMARKS"
-	if $(test -f "$CUST"); then
-		cat "$CUST"
-	fi
+	echo "PERMANENT BOOKMARKS"
+	bdirbs_expand "$PERM"
+	echo "CUSTOM BOOKMARKS"
+	bdirbs_expand "$CUST"
 	echo "DUPLICATE BOOKMARKS"
 	bdirbs_check
 }

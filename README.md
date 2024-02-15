@@ -5,8 +5,9 @@ BDIRBS = Bash DIRectory Bookmark System.
 
 ## to-dos
 
+ - [ ] write in GO language.
  - [ ] find single name for script bdirbs or cd-xxx.
- - [ ] remove unncessary scripts.
+ - [ ] remove unnecessary scripts.
 
 other:
 

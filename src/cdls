@@ -9,8 +9,8 @@ CUST=~/.config/bashdirbs/custom
 
 function main() {
 	(
-		bdirbs_expand "$CUST"
-		bdirbs_expand "$PERM"
+		expand_globs "$CUST"
+		expand_globs "$PERM"
 	) | sort | uniq
 }
 

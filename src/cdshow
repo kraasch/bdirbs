@@ -9,9 +9,9 @@ CUST=~/.config/bashdirbs/custom
 
 function main() {
 	echo "PERMANENT BOOKMARKS"
-	bdirbs_expand "$PERM"
+	expand_globs "$PERM"
 	echo "CUSTOM BOOKMARKS"
-	bdirbs_expand "$CUST"
+	expand_globs "$CUST"
 	echo "DUPLICATE BOOKMARKS"
 	bdirbs_check
 }

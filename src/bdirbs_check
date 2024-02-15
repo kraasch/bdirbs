@@ -4,8 +4,8 @@ PERM=~/.config/bashdirbs/permanent
 CUST=~/.config/bashdirbs/custom
 
 (
-	bdirbs_expand "$PERM"
-	bdirbs_expand "$CUST"
+	expand_globs "$PERM"
+	expand_globs "$CUST"
 ) | sort -n |
 	uniq -c |                  # count occurences.
 	grep -vE '^[ ]* 1 ' |      # get the lines that are not unique.

@@ -1,0 +1,6 @@
+#!/bin/bash
+
+PERM=~/.config/bashdirbs/permanent
+CUST=~/.config/bashdirbs/custom
+
+$EDITOR "$PERM" "$CUST"

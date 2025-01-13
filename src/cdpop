@@ -1,8 +1,6 @@
 #!/bin/bash
 
-#> synopsis: cdpop
-#> type: interactive (bash).
-#> comment: remove the last directory bookmark.
+# program description: remove the last directory bookmark.
 
 PERM=~/.config/bashdirbs/permanent
 CUST=~/.config/bashdirbs/custom
